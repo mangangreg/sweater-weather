@@ -1,13 +1,22 @@
-from app import app, db
-from app.models import User, openweather_response, weather
-from app import weather_api
+from appdir import app, db
+from appdir.models import User, openweather_response, weather
+from appdir import weather_api
 import os
+from importlib import reload
 
 @app.shell_context_processor
 def make_shell_context():
-    return {'db': db, 'User': User, 'weather':weather, 
-    'openweather_response': openweather_response,
-    'wapi':weather_api}
+
+    context = {
+        'db': db, 
+        'User': User, 
+        'weather':weather, 
+        'openweather_response': openweather_response,
+        'wapi': weather_api,
+        'reload': reload
+    }
+    print(f"Importing: {', '.join(context.keys())}")
+    return context
 
 if __name__ == '__main__' and not os.environ.get('DONT_RUN'):
     # Only for debugging while developing
