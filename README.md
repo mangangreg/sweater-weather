@@ -20,6 +20,7 @@ Not another weather app!
 ## Frontend
 Using Vue 2, Setup using vue webpack [template](https://github.com/vuejs-templates/webpack) (`vue init webpack sweater-weather`)
 Logo from https://pixabay.com/vectors/clothes-clothings-pullover-shirt-1294931/
+- Runs at localhost:8080
 
 ### Running in development mode
 ``` npm run dev```
